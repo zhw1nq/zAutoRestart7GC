@@ -1,0 +1,65 @@
+{
+  "AutoRestart": {
+    // Crontab schedule format (Minute Hour Day-of-month Month Day-of-week).
+    // Default: "0 */4 * * *" = restarts every 4 hours (00:00, 04:00, 08:00, 12:00, 16:00, 20:00).
+    "CronSchedule": "0 */4 * * *",
+
+    // Time warning alerts before restart (in minutes).
+    "WarningIntervalsMinutes": [ 30, 15, 10, 5, 1 ],
+
+    // Final countdown in seconds before server quits (default: 3).
+    "CountdownSeconds": 3,
+
+    // Sound effect (SFX) played on notifications and countdowns (leave empty "" to disable).
+    // Supports sound files (e.g. "sounds/ui/deathnotice.vsnd_c") or sound event names.
+    "NotificationSound": "sounds/ui/deathnotice.vsnd_c",
+
+    // If true, the server will postpone restart until the current active match ends.
+    "WaitForMatchEnd": true,
+
+    // Vote extension configuration (!ereset).
+    "Extend": {
+      // Allowed voting window: players can vote when remaining time <= this value (in minutes).
+      "AllowedWindowMinutes": 30,
+
+      // Duration added to the restart schedule upon successful vote (in minutes).
+      "ExtendMinutes": 30,
+
+      // Percentage of active human players required to approve extension (80.0 = 80%).
+      "RequiredPercentage": 80.0,
+
+      // Maximum number of extensions allowed per cycle (0 = unlimited).
+      "MaxExtendsPerCycle": 2,
+
+      // Minimum number of players required on the server to allow extend voting.
+      "MinPlayersToVote": 3
+    },
+
+    // Permissions for commands (supports wildcard "*" or "admin.*").
+    // An empty string "" grants permission to all players.
+    "Permissions": {
+      "HardReset": "admin.permission.reset.hard",
+      "SetSchedule": "admin.permission.reset.set",
+      "ExtendReset": ""
+    },
+
+    // Discord Webhook admin notification settings.
+    "Webhook": {
+      "Enabled": true,
+      "WebhookUrl": "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL",
+      "BotUsername": "CS2 Server AutoRestart",
+      "AvatarUrl": "https://i.imgur.com/8QfJq1M.png",
+      // Server name override (if empty, automatically reads from convar 'hostname').
+      "ServerNameOverride": "",
+      "Events": {
+        "NotifyOnWarning": true,
+        "NotifyOnWaitingForMatchEnd": true,
+        "NotifyOnHardReset": true,
+        "NotifyOnExtendVote": true,
+        "NotifyOnSetSchedule": true,
+        "NotifyOnRestarting": true
+      }
+    }
+  }
+}
+

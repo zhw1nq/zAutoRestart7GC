@@ -1,0 +1,42 @@
+{
+  "prefix": "[GOLD]AutoRestart [SILVER]» ",
+
+  // Warnings
+  "chat.warning.minutes": "[RED]WARNING:[/] Server will restart in [GOLD]{0}[/] minute(s) at [LIME]{1}[/]!",
+  "center.warning.minutes": "<font color='red'><b>SERVER RESTART WARNING</b></font><br><font color='yellow'>Restarting in <b>{0}</b> minute(s)</font>",
+
+  // Match in progress
+  "chat.match_in_progress": "[RED]NOTICE:[/] Scheduled restart time reached! Server will restart once the current match ends.",
+  "center.match_in_progress": "<font color='red'><b>RESTART TIME REACHED</b></font><br><font color='yellow'>Server will restart when current match ends!</font>",
+
+  // Final 8-second sequence
+  "chat.countdown.seconds": "[RED]WARNING:[/] Server restarting in [RED]{0}[/] second(s)!",
+  "center.countdown.seconds": "<font color='red'><b>SERVER RESTARTING</b></font><br><font color='yellow'>in <b>{0}s...</b></font>",
+  "chat.restarting_now": "[RED]Server is restarting now! Please reconnect shortly...",
+  "center.restarting_now": "<font color='red'><b>SERVER RESTARTING NOW</b></font><br><font color='white'>Please reconnect shortly...</font>",
+
+  // Hard Reset (!hreset)
+  "chat.hreset.executed": "[RED]Admin [GOLD]{0}[RED] forced a HARD RESET! Server restarting in [LIME]3[RED]s!",
+  "center.hreset.executed": "<font color='red'><b>[HARD RESET]</b></font><br>Admin <font color='gold'>{0}</font> triggered reset!<br><font color='yellow'>Restarting in 3s...</font>",
+
+  // Extend Reset (!ereset)
+  "chat.ereset.not_scheduled": "[LIGHTRED]There is no scheduled restart pending or outside the extension window.",
+  "chat.ereset.already_voted": "[YELLOW]You have already voted to extend the restart.",
+  "chat.ereset.min_players": "[LIGHTRED]At least {0} players are required on the server to vote for an extension.",
+  "chat.ereset.max_reached": "[LIGHTRED]Maximum extension limit ({0} times) has been reached for this cycle.",
+  "chat.ereset.voted": "[GOLD]{0} [SILVER]voted to extend restart ([GREEN]{1}[SILVER]/[GREEN]{2}[SILVER] - [LIME]{3}%[SILVER]). Type [GOLD]!ereset[SILVER] to vote!",
+  "chat.ereset.passed": "[GREEN]Vote passed! Server restart postponed by [GOLD]{0}[GREEN] minutes. New restart time: [GOLD]{1}[GREEN].",
+  "center.ereset.passed": "<font color='lime'><b>RESTART EXTENDED</b></font><br><font color='yellow'>Postponed by <b>{0}</b> minutes!</font>",
+
+  // Set Schedule (!sreset)
+  "chat.sreset.usage": "[YELLOW]Usage: [GOLD]!sreset <time>[YELLOW] (e.g. 1h, 30m, 1h30m) or [GOLD]!sreset remove",
+  "chat.sreset.scheduled": "[GREEN]Admin [GOLD]{0}[GREEN] scheduled a temporary restart in [GOLD]{1}[GREEN] (at [LIME]{2}[GREEN]).",
+  "center.sreset.scheduled": "<font color='lime'><b>SCHEDULE UPDATED</b></font><br><font color='yellow'>Temporary restart set in <b>{0}</b></font>",
+  "chat.sreset.removed": "[GREEN]Admin [GOLD]{0}[GREEN] removed the temporary restart schedule.",
+  "center.sreset.removed": "<font color='lime'><b>SCHEDULE REMOVED</b></font><br><font color='white'>Temporary restart schedule cancelled!</font>",
+  "chat.sreset.no_temp": "[LIGHTRED]There is no temporary restart schedule active to remove.",
+  "chat.sreset.invalid_time": "[LIGHTRED]Invalid time format! Use numbers followed by 'h' or 'm' (e.g., 45m, 2h).",
+
+  // Permissions & Errors
+  "error.no_permission": "[LIGHTRED]You do not have permission to use this command."
+}

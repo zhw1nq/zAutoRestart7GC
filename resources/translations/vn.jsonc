@@ -1,0 +1,42 @@
+{
+  "prefix": "[GOLD]AutoRestart [SILVER]» ",
+
+  // Warnings
+  "chat.warning.minutes": "[RED]CẢNH BÁO:[/] Máy chủ sẽ tự động khởi động lại sau [GOLD]{0}[/] phút nữa (lúc [LIME]{1}[/])!",
+  "center.warning.minutes": "<font color='red'><b>CẢNH BÁO KHỞI ĐỘNG LẠI</b></font><br><font color='yellow'>Khởi động lại sau <b>{0}</b> phút</font>",
+
+  // Match in progress
+  "chat.match_in_progress": "[RED]THÔNG BÁO:[/] Đã tới thời gian khởi động, máy chủ sẽ khởi động khi match kết thúc!",
+  "center.match_in_progress": "<font color='red'><b>ĐÃ TỚI THỜI GIAN KHỞI ĐỘNG</b></font><br><font color='yellow'>Máy chủ sẽ khởi động khi match kết thúc!</font>",
+
+  // Final 8-second sequence
+  "chat.countdown.seconds": "[RED]CẢNH BÁO:[/] Máy chủ khởi động lại trong [RED]{0}[/] giây nữa!",
+  "center.countdown.seconds": "<font color='red'><b>MÁY CHỦ KHỞI ĐỘNG LẠI</b></font><br><font color='yellow'>Còn lại: <b>{0}s...</b></font>",
+  "chat.restarting_now": "[RED]Máy chủ đang thực hiện khởi động lại... Vui lòng kết nối lại sau!",
+  "center.restarting_now": "<font color='red'><b>MÁY CHỦ ĐANG KHỞI ĐỘNG LẠI</b></font><br><font color='white'>Đang ngắt kết nối...</font>",
+
+  // Hard Reset (!hreset)
+  "chat.hreset.executed": "[RED]Admin [GOLD]{0}[RED] đã thực hiện HARD RESET! Máy chủ khởi động lại sau [LIME]3[RED]s!",
+  "center.hreset.executed": "<font color='red'><b>[HARD RESET]</b></font><br>Admin <font color='gold'>{0}</font> đã thực hiện reset!<br><font color='yellow'>Khởi động lại sau 3s...</font>",
+
+  // Extend Reset (!ereset)
+  "chat.ereset.not_scheduled": "[LIGHTRED]Hiện tại máy chủ chưa có lịch sắp reset hoặc chưa đến khung giờ được gia hạn.",
+  "chat.ereset.already_voted": "[YELLOW]Bạn đã bình chọn gia hạn trước đó rồi.",
+  "chat.ereset.min_players": "[LIGHTRED]Cần tối thiểu {0} người chơi trên máy chủ để có thể bình chọn gia hạn.",
+  "chat.ereset.max_reached": "[LIGHTRED]Đã đạt giới hạn số lần gia hạn ({0} lần) cho đợt reset này.",
+  "chat.ereset.voted": "[GOLD]{0} [SILVER]đã vote gia hạn reset ([GREEN]{1}[SILVER]/[GREEN]{2}[SILVER] - [LIME]{3}%[SILVER]). Gõ [GOLD]!ereset[SILVER] để vote!",
+  "chat.ereset.passed": "[GREEN]Bình chọn thành công! Thời gian reset được hoãn thêm [GOLD]{0}[GREEN] phút. Thời gian reset mới: [GOLD]{1}[GREEN].",
+  "center.ereset.passed": "<font color='lime'><b>ĐÃ GIA HẠN RESET</b></font><br><font color='yellow'>Hoãn khởi động lại thêm <b>{0}</b> phút!</font>",
+
+  // Set Schedule (!sreset)
+  "chat.sreset.usage": "[YELLOW]Cú pháp: [GOLD]!sreset <thời_gian>[YELLOW] (ví dụ: 1h, 30m, 1h30m) hoặc [GOLD]!sreset remove",
+  "chat.sreset.scheduled": "[GREEN]Admin [GOLD]{0}[GREEN] đã đặt lịch reset tạm thời sau [GOLD]{1}[GREEN] (lúc [LIME]{2}[GREEN]).",
+  "center.sreset.scheduled": "<font color='lime'><b>ĐÃ CẬP NHẬT LỊCH</b></font><br><font color='yellow'>Khởi động lại tạm thời sau <b>{0}</b></font>",
+  "chat.sreset.removed": "[GREEN]Admin [GOLD]{0}[GREEN] đã huỷ lịch reset tạm thời.",
+  "center.sreset.removed": "<font color='lime'><b>ĐÃ HUỶ LỊCH TẠM THỜI</b></font><br><font color='white'>Đã quay lại lịch định kỳ bình thường!</font>",
+  "chat.sreset.no_temp": "[LIGHTRED]Hiện không có lịch reset tạm thời nào để xoá.",
+  "chat.sreset.invalid_time": "[LIGHTRED]Định dạng thời gian không hợp lệ! Hãy dùng số kèm theo 'h' hoặc 'm' (ví dụ: 45m, 1h).",
+
+  // Permissions & Errors
+  "error.no_permission": "[LIGHTRED]Bạn không có quyền thực hiện lệnh này."
+}
