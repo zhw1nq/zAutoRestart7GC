@@ -11,10 +11,8 @@
     "CountdownSeconds": 3,
 
     // Sound effect (SFX) played on notifications and countdowns (leave empty "" to disable).
-    // Uses SoundEvent name (e.g. "zUI.Success").
+    // SoundEvent name defined in your vsndevts (e.g. "zUI.Success").
     "NotificationSound": "zUI.Success",
-    "NotificationSoundVolume": 1.0,
-    "NotificationSoundPitch": 1.0,
 
     // If true, the server will postpone restart until the current active match ends.
     "WaitForMatchEnd": true,

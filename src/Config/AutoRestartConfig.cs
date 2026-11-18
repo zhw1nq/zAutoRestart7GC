@@ -6,8 +6,6 @@ public class AutoRestartConfig
   public List<int> WarningIntervalsMinutes { get; set; } = [30, 15, 10, 5, 1];
   public int CountdownSeconds { get; set; } = 3;
   public string NotificationSound { get; set; } = "zUI.Success";
-  public float NotificationSoundVolume { get; set; } = 1.0f;
-  public float NotificationSoundPitch { get; set; } = 1.0f;
   public bool WaitForMatchEnd { get; set; } = true;
   public ExtendConfig Extend { get; set; } = new();
   public PermissionsConfig Permissions { get; set; } = new();

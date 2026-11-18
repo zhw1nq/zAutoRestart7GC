@@ -39,8 +39,6 @@ An automatic server restart plugin for **Counter-Strike 2** running on **Swiftly
     "WarningIntervalsMinutes": [ 30, 15, 10, 5, 1 ],
     "CountdownSeconds": 3,
     "NotificationSound": "zUI.Success",
-    "NotificationSoundVolume": 1.0,
-    "NotificationSoundPitch": 1.0,
     "WaitForMatchEnd": true,
     "Extend": {
       "AllowedWindowMinutes": 30,

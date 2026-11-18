@@ -30,44 +30,18 @@ public class SoundService : ISoundService
       return;
     }
 
-    float volume = _config.CurrentValue.NotificationSoundVolume > 0 ? _config.CurrentValue.NotificationSoundVolume : 1.0f;
-    float pitch = _config.CurrentValue.NotificationSoundPitch > 0 ? _config.CurrentValue.NotificationSoundPitch : 1.0f;
-
-    // Emit via SwiftlyS2 SoundEvent API with SourceEntityIndex = -1 (emits at recipient location)
     try
     {
-      using var soundEvent = new SoundEvent
+      using var soundEvent = new SoundEvent()
       {
-        Name = sound,
-        SourceEntityIndex = -1,
-        Volume = volume,
-        Pitch = pitch
+        Name = sound
       };
-
       soundEvent.Recipients.AddAllPlayers();
       soundEvent.Emit();
-      return;
     }
     catch (Exception ex)
     {
-      _logger.LogWarning(ex, "SoundEvent.Emit failed for '{Sound}'. Attempting client command fallback.", sound);
-    }
-
-    // Fallback: If SoundEvent failed (e.g. direct file path), execute client 'play' command
-    try
-    {
-      var players = _core.PlayerManager.GetAllValidPlayers();
-      foreach (var player in players)
-      {
-        if (player.IsValid && !player.IsFakeClient)
-        {
-          player.ExecuteCommand($"play \"{sound}\"");
-        }
-      }
-    }
-    catch (Exception ex)
-    {
-      _logger.LogWarning(ex, "Fallback player.ExecuteCommand('play') failed for sound '{Sound}'.", sound);
+      _logger.LogWarning(ex, "Failed to emit sound event '{Sound}'.", sound);
     }
   }
 }
