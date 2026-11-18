@@ -30,28 +30,30 @@ public class SoundService : ISoundService
       return;
     }
 
-    bool isFilePath = sound.Contains('/') || sound.Contains('\\') ||
-                      sound.EndsWith(".vsnd", StringComparison.OrdinalIgnoreCase) ||
-                      sound.EndsWith(".vsnd_c", StringComparison.OrdinalIgnoreCase);
+    float volume = _config.CurrentValue.NotificationSoundVolume > 0 ? _config.CurrentValue.NotificationSoundVolume : 1.0f;
+    float pitch = _config.CurrentValue.NotificationSoundPitch > 0 ? _config.CurrentValue.NotificationSoundPitch : 1.0f;
 
-    // If it's a sound event name (no path/extension), try emitting via SoundEvent first
-    if (!isFilePath)
+    // Emit via SwiftlyS2 SoundEvent API with SourceEntityIndex = -1 (emits at recipient location)
+    try
     {
-      try
+      using var soundEvent = new SoundEvent
       {
-        using var soundEvent = new SoundEvent(sound, 1.0f, 1.0f);
-        soundEvent.Recipients.AddAllPlayers();
-        soundEvent.Emit();
-        return;
-      }
-      catch (Exception ex)
-      {
-        _logger.LogDebug(ex, "SoundEvent emit failed for '{Sound}', falling back to client command.", sound);
-      }
+        Name = sound,
+        SourceEntityIndex = -1,
+        Volume = volume,
+        Pitch = pitch
+      };
+
+      soundEvent.Recipients.AddAllPlayers();
+      soundEvent.Emit();
+      return;
+    }
+    catch (Exception ex)
+    {
+      _logger.LogWarning(ex, "SoundEvent.Emit failed for '{Sound}'. Attempting client command fallback.", sound);
     }
 
-    // For file paths (e.g. "sounds/ui/deathnotice.vsnd_c") or fallback:
-    // Execute client-side 'play <sound>' on all connected human players.
+    // Fallback: If SoundEvent failed (e.g. direct file path), execute client 'play' command
     try
     {
       var players = _core.PlayerManager.GetAllValidPlayers();
@@ -65,8 +67,7 @@ public class SoundService : ISoundService
     }
     catch (Exception ex)
     {
-      _logger.LogWarning(ex, "Error playing sound '{Sound}' via player.ExecuteCommand.", sound);
+      _logger.LogWarning(ex, "Fallback player.ExecuteCommand('play') failed for sound '{Sound}'.", sound);
     }
   }
 }
-

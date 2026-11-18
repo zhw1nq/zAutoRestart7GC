@@ -18,5 +18,6 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
-# Internal documentation
+# Internal documentation and examples
 AI-READ-DOCS-HERE/
+examples/

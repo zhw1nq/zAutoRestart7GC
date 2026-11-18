@@ -9,7 +9,7 @@ An automatic server restart plugin for **Counter-Strike 2** running on **Swiftly
 - **Crontab Scheduling:** Configurable cron expressions (e.g., `0 */4 * * *` for every 4 hours).
 - **Time Warnings:** Chat alerts at customized intervals (30m, 15m, 10m, 5m, 1m).
 - **3-Second Countdown:** Visual countdown HUD in Center HTML before restart.
-- **Notification SFX:** Plays custom audio cue (`sounds/ui/deathnotice.vsnd_c`) on alerts and countdown ticks.
+- **Notification SFX:** Plays custom audio cue (`zUI.Success`) on alerts and countdown ticks via Source 2 SoundEvent.
 - **Match Protection:** Automatically postpones restart if a match is currently in progress.
 - **Safe Player Kick:** Kicks players with engine reason code `69` (`NETWORK_DISCONNECT_SERVER_SHUTDOWN`).
 - **Vote Extend (`!ereset`):** Players can vote to delay restart by X minutes (requires 80% approval and minimum 3 players).
@@ -38,7 +38,9 @@ An automatic server restart plugin for **Counter-Strike 2** running on **Swiftly
     "CronSchedule": "0 */4 * * *",
     "WarningIntervalsMinutes": [ 30, 15, 10, 5, 1 ],
     "CountdownSeconds": 3,
-    "NotificationSound": "sounds/ui/deathnotice.vsnd_c",
+    "NotificationSound": "zUI.Success",
+    "NotificationSoundVolume": 1.0,
+    "NotificationSoundPitch": 1.0,
     "WaitForMatchEnd": true,
     "Extend": {
       "AllowedWindowMinutes": 30,
